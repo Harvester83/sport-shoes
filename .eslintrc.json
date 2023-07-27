@@ -16,6 +16,8 @@
       }
     ],
 
-    "arrow-parens": ["error", "as-needed"] // скобки вокруг единственного параметра стрелочной функции
+    "arrow-parens": "off",
+    "semi": "off",
+    "no-unused-vars": "off"
   }
 }

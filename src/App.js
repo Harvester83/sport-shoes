@@ -117,19 +117,22 @@ function App() {
     return cartItems.some((obj) => Number(obj.parentId) === Number(id))
   }
 
+  const appContextProps = React.useMemo(
+    () => ({
+      items,
+      cartItems,
+      favorites,
+      isItemAdded,
+      onAddToFavorite,
+      onAddToCart,
+      setCartOpened,
+      setCartItems,
+    }),
+    []
+  )
+
   return (
-    <AppContext.Provider
-      value={{
-        items,
-        cartItems,
-        favorites,
-        isItemAdded,
-        onAddToFavorite,
-        onAddToCart,
-        setCartOpened,
-        setCartItems,
-      }}
-    >
+    <AppContext.Provider value={appContextProps}>
       <div className="wrapper clear">
         <Drawer
           items={cartItems}

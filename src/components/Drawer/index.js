@@ -26,7 +26,7 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
 
       for (let i = 0; i < cartItems.length; i++) {
         const item = cartItems[i]
-        await axios.delete('/cart/' + item.id)
+        await axios.delete(`/cart/${item.id}`)
         await delay(1000)
       }
     } catch (error) {
@@ -59,7 +59,7 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
                   <div
                     style={{ backgroundImage: `url(${obj.imageUrl})` }}
                     className="cartItemImg"
-                  ></div>
+                  />
 
                   <div className="mr-20 flex">
                     <p className="mb-5">{obj.title}</p>
@@ -78,12 +78,12 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
               <ul>
                 <li>
                   <span>Итого:</span>
-                  <div></div>
+                  <div />
                   <b>{totalPrice} руб. </b>
                 </li>
                 <li>
                   <span>Налог 5%:</span>
-                  <div></div>
+                  <div />
                   <b>{(totalPrice / 100) * 5} руб. </b>
                 </li>
               </ul>
