@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import { useCart } from '../hooks/useCart';
+import { useCart } from '../hooks/useCart'
 
 function Header(props) {
-  const { totalPrice } = useCart();
+  const { totalPrice } = useCart()
 
   return (
     <header className="d-flex justify-between align-center p-40">
@@ -34,7 +34,7 @@ function Header(props) {
         </li>
       </ul>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
